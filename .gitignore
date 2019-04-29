@@ -1,4 +1,3 @@
 *tfstate*
 *.terraform*
-*privatekey.txt*
-
+*privatekey.txt

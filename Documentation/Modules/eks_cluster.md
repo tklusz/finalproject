@@ -17,7 +17,11 @@ The module creates the following resources:
 * No assumptions or static content currently.
 
 ## Output
-* No output currently.
+This module outputs the following
+* Endpoint of the cluster - `cluster_endpoint`.
+* Cluster certificate authority - `cluster_authority`.
+* Name of the cluster - `cluster_name`.
+
 
 ## Concerns
 * No concerns currently.
