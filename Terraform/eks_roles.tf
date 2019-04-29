@@ -4,6 +4,7 @@ module "eks_role" {
 
   role_name = "eks_role"
   role_filepath = "external_docs/iam_policies/eks_policy.json"
+  role_path = "/eks/"
 }
 
 # Attaching additional premade policies to the role.

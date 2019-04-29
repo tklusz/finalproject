@@ -6,6 +6,7 @@ Official Terraform documentation for IAM roles [here.](https://www.terraform.io/
 ## Variables
 * **role_name** - Name of the IAM role to create.
 * **role_filepath** - Path to the IAM role file on the system.
+* **role_path** - Path to IAM role. Default = '/'
 
 ## Resource creation
 The module creates the following resources:
