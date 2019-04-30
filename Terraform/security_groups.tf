@@ -13,14 +13,16 @@ module "eks_sg" {
 
   /*
   If you would like to access with your local machine, uncomment the following.
-  Remeber to comment again before uploading to github.
+  Remember to comment again before uploading to github.
 
-  ingress_from_ports = [443]
-  ingress_to_ports = [443]
-  ingress_protocols = ["tcp"]
-  ingress_cidrs = ["<Your IPV4>/32"]
+
+  ingress_from_ports = [0]
+  ingress_to_ports = [0]
+  ingress_protocols = ["-1"]
+  ingress_cidrs = [["x.x.x.x/32"]]
 
   */
+
 
   tag_name = "EKS_SG"
 }

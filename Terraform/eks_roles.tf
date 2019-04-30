@@ -1,9 +1,19 @@
+# Using our template role.
+data "template_file" "policy_file" {
+	template = "${file("external_docs/iam_policies/eks_policy.json.tpl")}"
+
+	vars {
+    user_arn = "${module.eks_admin.user_arn}"
+	}
+}
+
+
 # Creating EKS role with assume role policy
 module "eks_role" {
   source = "./modules/iam/role"
 
   role_name = "eks_role"
-  role_filepath = "external_docs/iam_policies/eks_policy.json"
+  role_template = "${data.template_file.policy_file.rendered}"
   role_path = "/eks/"
 }
 
