@@ -4,7 +4,8 @@
     {
       "Effect": "Allow",
       "Principal": {
-        "Service": "eks.amazonaws.com"
+        "Service": "eks.amazonaws.com",
+        "AWS": "${user_arn}"
       },
       "Action": "sts:AssumeRole"
     }

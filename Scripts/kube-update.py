@@ -1,6 +1,5 @@
 # Requires Boto3 - pip install boto3
 # Must run "aws configure" before running this script.
-# Place kubectl config file in Scripts/kubeconfig
 
 # Using boto3; os for system commands (aws cli).
 import boto3
