@@ -30,3 +30,9 @@ This file contains information on how to set up our infrastructure, laid out in 
 Navigate back to your finalproject folder. From there, navigate to the Terraform folder, and type `terraform destroy`. The console should list a number of resources, and ask if you want to delete them. Type "yes". If there are no errors, your infrastructure has been successfully deleted.
 
 ## Deleting your infrastructure (manually).
+
+Navigate to the AWS console. This infrastructure uses the following AWS services which must be manually removed:
+* EKS - Cluster.
+* IAM - Roles, policies, users, groups.
+* VPC - VPC (internet gateway, nat gateway, etc).
+* EC2 - EKS worker nodes. Should be deleted when the cluster is deleted.
