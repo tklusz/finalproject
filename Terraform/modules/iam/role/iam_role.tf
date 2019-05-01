@@ -1,6 +1,6 @@
 # Variables used to create the IAM role.
 variable "role_name" {}
-variable "role_filepath" {}
+variable "role_template" {}
 variable "role_path" {
 	default = "/"
 }
@@ -8,7 +8,7 @@ variable "role_path" {
 # Create the IAM role.
 resource "aws_iam_role" "role_module_role" {
 	name = "${var.role_name}"
-	assume_role_policy = "${file("${var.role_filepath}")}"
+	assume_role_policy = "${var.role_template}"
 	path = "${var.role_path}"
 }
 

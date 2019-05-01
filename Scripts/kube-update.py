@@ -1,12 +1,12 @@
 # Requires Boto3 - pip install boto3
 # Must run "aws configure" before running this script.
-# Place kubectl config file in Scripts/kubeconfig
+# Terraform must successfully be built before running this script.
 
-# Using boto3; os for system commands (aws cli).
+# Using boto3; os for system commands.
 import boto3
 import os
 
-# Retrieving our cluster name.
+# Retrieving our cluster name (this should be updated with a tag if you're using multiple clusters).
 def retrieve_name():
 
     client = boto3.client('eks')
@@ -15,28 +15,32 @@ def retrieve_name():
     )
     return clusters['clusters'][0]
 
-# Retrieving necessary IAM role ARN for kubectl update.
-def retrieve_iam_role():
-    client = boto3.client('iam')
-    roles = client.list_roles(
-        PathPrefix = '/eks/',
-        MaxItems = 1
-    )
-    return roles['Roles'][0]['Arn']
-
 # Retrieves the kubectl configuration, places in .kube/config
-def retrieve_kubectl(cluster_name, cluster_iam):
-    command = "aws eks update-kubeconfig --name " + cluster_name + \
-        " --role-arn " + cluster_iam
+def retrieve_kubectl(cluster_name):
+    command = "aws eks update-kubeconfig --name " + cluster_name
 
     os.system(command)
 
-# Retrieving name, iam role, then pulling kubectl.
+# Sets up config map.
+def config_map_setup():
+
+    # Create config map from output
+    os.system("terraform output -state=../Terraform/terraform.tfstate config_map_aws_auth > config_map_aws_auth.yaml")
+
+    # Apply new configmap
+    os.system("kubectl apply -f config_map_aws_auth.yaml")
+
+    # Deletes local copy of config map.
+    os.system("rm config_map_aws_auth.yaml")
+
+
+# Retrieving name, pulling kubectl, updating config map.
 try:
     cluster_name = retrieve_name()
-    cluster_iam = retrieve_iam_role()
+    retrieve_kubectl(cluster_name)
+    config_map_setup()
 
-    retrieve_kubectl(cluster_name, cluster_iam)
+    print("\nBuild Successful. Run 'kubectl get nodes --watch' to view nodes.")
 
 # Handling errors.
 except Exception as e:

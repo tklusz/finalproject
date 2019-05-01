@@ -21,11 +21,12 @@ resource "aws_eks_cluster" "eks_module_cluster"{
 output "cluster_endpoint" {
   value = "${aws_eks_cluster.eks_module_cluster.endpoint}"
 }
-
 output "cluster_authority" {
   value = "${aws_eks_cluster.eks_module_cluster.certificate_authority.0.data}"
 }
-
 output "cluster_name" {
   value = "${var.cluster_name}"
+}
+output "cluster_version" {
+  value = "${aws_eks_cluster.eks_module_cluster.version}"
 }

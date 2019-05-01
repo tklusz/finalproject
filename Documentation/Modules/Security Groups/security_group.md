@@ -21,7 +21,7 @@ The module creates the following resources:
 * No assumptions or static content currently.
 
 ## Output
-* ID of the security group - `security_group_id`
+* ID of the security group - `security_group_id`.
 
 ## Concerns
 * Formatting is a bit strange for this module. See the large comment in the file for more information about how to use the variables correctly.
