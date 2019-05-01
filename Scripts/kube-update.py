@@ -1,11 +1,12 @@
 # Requires Boto3 - pip install boto3
 # Must run "aws configure" before running this script.
+# Terraform must successfully be built before running this script.
 
-# Using boto3; os for system commands (aws cli).
+# Using boto3; os for system commands.
 import boto3
 import os
 
-# Retrieving our cluster name.
+# Retrieving our cluster name (this should be updated with a tag if you're using multiple clusters).
 def retrieve_name():
 
     client = boto3.client('eks')
@@ -20,10 +21,26 @@ def retrieve_kubectl(cluster_name):
 
     os.system(command)
 
-# Retrieving name then pulling kubectl.
+# Sets up config map.
+def config_map_setup():
+
+    # Create config map from output
+    os.system("terraform output -state=../Terraform/terraform.tfstate config_map_aws_auth > config_map_aws_auth.yaml")
+
+    # Apply new configmap
+    os.system("kubectl apply -f config_map_aws_auth.yaml")
+
+    # Deletes local copy of config map.
+    os.system("rm config_map_aws_auth.yaml")
+
+
+# Retrieving name, pulling kubectl, updating config map.
 try:
     cluster_name = retrieve_name()
     retrieve_kubectl(cluster_name)
+    config_map_setup()
+
+    print("\nBuild Successful. Run 'kubectl get nodes --watch' to view nodes.")
 
 # Handling errors.
 except Exception as e:
