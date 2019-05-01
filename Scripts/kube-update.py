@@ -14,28 +14,16 @@ def retrieve_name():
     )
     return clusters['clusters'][0]
 
-# Retrieving necessary IAM role ARN for kubectl update.
-def retrieve_iam_role():
-    client = boto3.client('iam')
-    roles = client.list_roles(
-        PathPrefix = '/eks/',
-        MaxItems = 1
-    )
-    return roles['Roles'][0]['Arn']
-
 # Retrieves the kubectl configuration, places in .kube/config
-def retrieve_kubectl(cluster_name, cluster_iam):
-    command = "aws eks update-kubeconfig --name " + cluster_name + \
-        " --role-arn " + cluster_iam
+def retrieve_kubectl(cluster_name):
+    command = "aws eks update-kubeconfig --name " + cluster_name
 
     os.system(command)
 
-# Retrieving name, iam role, then pulling kubectl.
+# Retrieving name then pulling kubectl.
 try:
     cluster_name = retrieve_name()
-    cluster_iam = retrieve_iam_role()
-
-    retrieve_kubectl(cluster_name, cluster_iam)
+    retrieve_kubectl(cluster_name)
 
 # Handling errors.
 except Exception as e:

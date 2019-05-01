@@ -18,3 +18,25 @@ The module doesn't create any resources, but attaches each of the specified poli
 
 ## Concerns
 * No concerns currently.
+
+## Additional information
+Using an IAM role in relation to a trust relationship, (for example `Terraform/external_docs/iam_policies/eks_policy.json.tpl`), to add additional IAM accounts, you can use the following formatting:
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "eks.amazonaws.com",
+        "AWS": [
+          "arn:aws:iam::<accountid>:user/<username1>",
+          "arn:aws:iam::<accountid>:user/<username2>"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+It's also possible to use variables, which can be set during the use of the  module.
