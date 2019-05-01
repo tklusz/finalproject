@@ -1,0 +1,66 @@
+- hosts: all
+  become: yes
+#- name: run the playbook tasks on the localhost
+#  hosts: 127.0.0.1
+#  connection: local
+#  become: yes
+  tasks:
+   - name: install Docker
+     apt:
+       name: docker.io
+       state: present
+       update_cache: true
+   - name: setup docker daemon to use systemd
+     blockinfile:
+      path: /etc/docker/daemon.json
+      block: |
+        {
+        "exec-opts": ["native.cgroupdriver=systemd"],
+        "log-driver": "json-file",
+        "log-opts": {
+          "max-size": "100m"
+        },
+        "storage-driver": "overlay2"
+        }
+      create: yes
+   - name: Start docker on boot
+     systemd:
+      name: docker
+      state: started
+      enabled: yes
+
+   - name: install APT Transport HTTPS
+     apt:
+       name: apt-transport-https
+       state: present
+
+   - name: add Kubernetes apt-key
+     apt_key:
+       url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+       state: present
+
+   - name: add Kubernetes' APT repository
+     apt_repository:
+      repo: deb http://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: 'kubernetes'
+
+   - name: install kubelet
+     apt:
+       name: kubelet=1.14.0-00
+       state: present
+       update_cache: true
+
+   - name: install kubeadm
+     apt:
+       name: kubeadm=1.14.0-00
+       state: present
+
+- hosts: master
+  become: yes
+  tasks:
+   - name: install kubectl
+     apt:
+       name: kubectl=1.14.0-00
+       state: present
+       force: yes
