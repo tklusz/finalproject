@@ -1,17 +1,18 @@
 - hosts: master
-#- name: run the playbook tasks on the localhost
+- name: run the playbook tasks on the localhost
 #  hosts: 127.0.0.1
 #  connection: local
-  become: yes
+ # become: yes
   tasks:
     - name: initialize the cluster
-      shell: kubeadm init --pod-network-cidr=192.168.36.0/24 >> cluster_initialized.txt
+      become: yes
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16 >> cluster_initialized.txt
       args:
         chdir: $HOME
         creates: cluster_initialized.txt
 
     - name: create .kube directory
-      become: yes
+      #become: yes
       #become_user: ubuntu
       file:
         path: $HOME/.kube
@@ -19,6 +20,7 @@
         mode: 0755
 
     - name: copy admin.conf to user's kube config
+      become: yes
       copy:
         src: /etc/kubernetes/admin.conf
         dest: /home/ubuntu/.kube/config
@@ -27,7 +29,7 @@
 
     - name: install Pod network
       #become: yes
-      become_user: ubuntu
+      #become_user: ubuntu
       shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml >> pod_network_setup.txt
       args:
         chdir: $HOME

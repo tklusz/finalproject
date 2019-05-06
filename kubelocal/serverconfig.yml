@@ -22,3 +22,11 @@
         path: /etc/fstab
         regexp: '^(.+?\sswap\s+sw\s+.*)$'
         replace: '# \1'
+    - name: Update and upgrade apt packages
+      become: yes
+      apt:
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 #One day
+
+        
