@@ -1,7 +1,7 @@
 *tfstate*
 *.terraform*
 *privatekey.txt*
-.pub
+*.pub
 
 # Created by https://www.gitignore.io/api/node,java,python,ansible,windows,vagrant,terraform
 # Edit at https://www.gitignore.io/?templates=node,java,python,ansible,windows,vagrant,terraform
