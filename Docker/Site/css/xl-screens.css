@@ -1,0 +1,6 @@
+@media only screen and (min-width: 1111px) {
+  .section-line-2{
+    display: inline-block;
+    padding-right: .7em;
+  }
+}

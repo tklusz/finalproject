@@ -1,0 +1,19 @@
+@media only screen and (max-width: 350px) {
+
+  #cta{
+    width: 200px;
+  }
+
+  p, .sub-paragraph {
+    font-size: .9em;
+  }
+
+  .main-section {
+    padding: 1.3em;
+  }
+
+  .section-subtitle{
+    font-size: 1.2em;
+  }
+
+}

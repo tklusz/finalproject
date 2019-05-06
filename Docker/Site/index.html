@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Tyler Kluszczynski's Homepage</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/small-screens.css">
+    <link rel="stylesheet" href="css/large-screens.css">
+    <link rel="stylesheet" href="css/xl-screens.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
+    <meta name="description" content="Tyler Kluszczynski's personal website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/static/me.jpg">
+
+  </head>
+
+  <body>
+
+    <div class="whole-contents">
+
+      <div class="top-bar">
+
+        <nav id="navbar" class="desktop-only">
+          <a class="navitem" href="#about">About</a>
+          <a class="navitem" href="#experience">Experience</a>
+          <a class="navitem" href="#skills">Skills</a>
+          <a class="navitem contact" href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="main-section">
+
+        <img id="me" src="static/me.jpg" alt="Tyler Kluszczynski.">
+
+        <h5>I'm</h5>
+
+        <div id="name">
+          <h1>Tyler</h1>
+          <h1 id="lastname">Kluszczynski</h1>
+        </div>
+
+        <p class="sub-paragraph">
+          A graduating senior and incoming DevOps engineer from
+          Santa&nbsp;Clarita, California.
+        </p>
+
+        <span>
+          <a href="#skills" class="cta desktop-only double-button">
+            View my skills
+          </a>
+          <a href="#contact" class="cta desktop-only secondary double-button">
+            Contact Me
+          </a>
+        </span>
+
+        <hr id="about">
+
+        <div>
+          <h2>About Me</h2>
+
+          <div>
+            <h3 class="section-subtitle">
+              <i class="fas fa-graduation-cap"></i>
+              B.S. in CIT @ CSUN with&nbsp;Honors
+            </h3>
+
+            <div class="education-list">
+              <p class = "section-description section-line-1">GPA:
+                <span class="bold">3.72</span>.
+              </p>
+              <p class = "section-description section-line-1">Upper Division GPA:
+                <span class="bold">3.93</span>.
+              </p>
+              <p class = "section-description section-line-2">
+                Minor in Religious Studies.
+              </p>
+              <p class = "section-description section-line-2">Obtaining:
+                <span class="bold">May 2019</span>.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="section-subtitle devops-subtitle">
+              <i class="fas fa-cloud"></i>
+              DevOps Experience
+            </h3>
+
+            <p class = "big-paragraph section-description">
+              1 year of professional DevOps experience through hands-on projects.
+            </p>
+
+            <p class = "big-paragraph section-description">
+              Experience with AWS infrastructure, containerization and container
+              orchistration, infrastructure as code, configuration management,
+              monitoring and CI - CD Pipelines.
+            </p>
+
+            <a href = "#skills" class="cta midline-cta">
+              View my DevOps skills
+            </a>
+
+          </div>
+        </div>
+
+        <hr id="experience">
+
+        <div>
+
+          <h2>Experience</h2>
+
+          <h3 class="section-subtitle">DevOps Capstone Project</h3>
+
+          <div class="exp-grid">
+
+            <div class = "exp-grid-description">
+              <p class="big-paragraph">
+                I'm currently developing AWS infrastructure in an agile enviornment,
+                working alongside a team of peers and a client. I'm building and
+                documenting reusable Terraform modules for our AWS infrastructure.
+                I've also automated Docker image building and deployment from GitLab to AWS ECS
+                using GitLab CI.
+              </p>
+              <p class="big-paragraph">
+                Recently, I set up Datadog monitoring with an AWS Lambda function,
+                a Datadog ECS agent and Datadog AWS integration with an IAM role.
+                Alongside this, I'm training a less experienced team member in advanced
+                Terraform topics such as Terraform modules and container
+                orchistration using ECS.
+              </p>
+            </div>
+
+            <div class = "exp-grid-icon">
+
+              <span class="closed-source">
+                <i class="fab closed-source-icon individual-icon  fa-gitlab fa-2x"></i>
+                <span class = "closed-tooltip">This project is closed source.</span>
+              </span>
+
+            </div>
+
+          </div>
+
+          <hr class = "exp-hr">
+
+          <h3 class = "section-subtitle">DevOps Projects</h3>
+
+          <div class = "exp-grid">
+
+            <div class = "exp-grid-description">
+              <p class="big-paragraph">
+                I worked with a group of peers to develop AWS infrastructure as
+                part of a senior-design class. During the class, I automated static
+                website delivery from GitHub to an S3 bucket using CircleCI.
+              </p>
+              <p class="big-paragraph">
+                After this, I deployed the website to AWS Cloudfront. I also obtained TLS
+                certificates using Let's Encrypt and AWS Certificate Manager for the
+                website. We also created EC2 instances with Terraform, which
+                I configured using Ansible.
+              </p>
+            </div>
+
+            <div class = "exp-grid-icon">
+
+              <a href="https://github.com/CSUN-SeniorDesign/eat-infrastructure">
+                <i class="fab individual-icon fa-github fa-2x"></i>
+              </a>
+
+            </div>
+          </div>
+
+          <hr class="exp-hr">
+
+          <h3 class = "section-subtitle">Web Development and Design</h3>
+
+          <div class = "exp-grid">
+
+            <div class = "exp-grid-description">
+              <p class="big-paragraph">
+                I designed this website using Adobe XD.
+              </p>
+              <p class="big-paragraph">
+                After the website was designed, I developed it using HTML,
+                CSS, and Font-Awesome for icons. The website is hosted using
+                GitLab pages, with Cloudflare as a DNS provider and caching
+                solution. It also has a TLS origin certificate from Cloudflare.
+                The domain was purchased from NameCheap.
+              </p>
+              <p class="big-paragraph">
+                I also deployed this website on DigitalOcean. First, I created
+                a droplet with a floating IP. Then, I created a firewall to
+                allow for HTTP, HTTPS and SSH traffic. I also created a
+                multistage CI-CD pipeline with GitLab CI, utilizing the GitLab
+                registry to store an intermiedate container image. Finally,
+                the code gets deployed to DigitalOcean through the CI-CD
+                pipeline using sshpass.
+              </p>
+            </div>
+
+            <div class = "exp-grid-icon">
+
+            <div class="both-gits">
+              <a href="https://github.com/tklusz/WebsiteCode">
+                <i class="fab individual-icon fa-github fa-2x"></i>
+              </a>
+            </div>
+
+            <div class="both-gits">
+              <a href="https://gitlab.com/tklusz/tklusz.gitlab.io">
+                <i class="fab individual-icon fa-gitlab fa-2x"></i>
+              </a>
+            </div>
+
+            </div>
+
+          </div>
+
+          <hr class = "exp-hr">
+
+          <h3 class = "section-subtitle">DevOps + Linux Sysadmin Assignments</h3>
+
+          <div class = "exp-grid">
+            <div class = "exp-grid-description">
+              <p class="big-paragraph">
+                As part of my capstone project, we are also assigned weekly assignments.
+                Some examples include creating a LAMP stack image
+                using a Dockerfile, and using Ansible playbooks to configure a LAMP stack.
+                I completed a write-up for each project which contains further
+                explanation of the task and my solution.
+              </p>
+          </div>
+
+          <div class = "exp-grid-icon">
+            <a href="https://github.com/tklusz/CapstoneAssignments">
+              <i class="fab individual-icon fa-github fa-2x"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <hr class = "exp-hr">
+
+        <h3 class = "section-subtitle">View all my experience:</h3>
+        <a href="/static/Tyler-Kluszczynski-Resume.pdf" class="cta">
+          <i class="fas fa-download"></i>
+          My Resume
+        </a>
+
+      <hr id="skills">
+
+      </div>
+
+      <h2>Skills</h2>
+
+      <h3 class = "section-subtitle less-top">DevOps Skills</h3>
+
+      <div class="skill-grid">
+
+        <div>
+          <h3 class="bold grid-title">
+            AWS Services:
+          </h3>
+          <div class="grid-paragraph skill-list">
+            VPC, ALB, ASG, EC2, RDS, IAM, ECR, ECS, ACM, Route 53, S3, Cloudfront, Lambda.
+          </div>
+        </div>
+
+        <div>
+          <h3 class="bold grid-title">
+            Containerization:
+          </h3>
+
+          <div class="grid-paragraph">
+            Dockerfiles, container orchistration with ECS, Docker-compose, volumes.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Monitoring:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            Datadog.
+          </div>
+        </div>
+
+        <div>
+          <h3 class="bold grid-title">
+            Infrastructure as Code:
+          </h3>
+
+          <div class="grid-paragraph">
+            Terraform with modules.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Configuration Management:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            Ansible
+          </div>
+        </div>
+
+        <div>
+          <h3 class="bold grid-title">
+            CI - CD Pipelines:
+          </h3>
+
+          <div class="grid-paragraph">
+            GitLab CI, CircleCI.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Scripting:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            Python, Bash.
+          </div>
+        </div>
+
+        <div>
+          <h3 class="bold grid-title">
+            Databases:
+          </h3>
+
+          <div class="grid-paragraph">
+            MySQL, SQLite.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Source Control:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            GitHub, GitLab, Bitbucket.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Cloud Platforms:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            AWS, DigitalOcean.
+          </div>
+        </div>
+
+    </div>
+
+
+      <hr class = "exp-hr skills-hr">
+
+      <h3 class = "section-subtitle less-top">Secondary Skills</h3>
+
+      <div class="skill-grid">
+
+        <div>
+          <h3 class=" bold grid-title">
+            Web Development:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            HTML, CSS, Javascript.
+          </div>
+        </div>
+
+        <div>
+          <h3 class=" bold grid-title">
+            Web Design:
+          </h3>
+
+          <div class="grid-paragraph skill-list">
+            Adobe XD.
+          </div>
+        </div>
+
+      </div>
+
+
+      <hr id="contact">
+
+      <h2 class ="contact-text">Contact Me</h2>
+
+      <div id="icon-set">
+        <a href="mailto:tylerkluszczynski@gmail.com"><i class="fas social-icon fa-envelope fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/tyler-kluszczynski/"><i class="fab social-icon fa-linkedin fa-2x"></i></a>
+        <a href="https://github.com/tklusz"><i class="fab social-icon fa-github fa-2x"></i></a>
+        <a href="https://gitlab.com/tklusz"><i class="fab social-icon fa-gitlab fa-2x"></i></a>
+      </div>
+
+    </div>
+  </div>
+
+  </body>
+</html>

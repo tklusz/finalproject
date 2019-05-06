@@ -10,4 +10,6 @@ module "vpc" {
 
   public_subnet_cidrs = ["172.31.1.0/26", "172.31.1.64/26"]
   public_subnet_azs = ["us-west-2a", "us-west-2b"]
+
+  cluster_name = "${var.cluster_name}"
 }

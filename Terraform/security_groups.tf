@@ -12,18 +12,11 @@ module "cluster_sg" {
   egress_protocols   = ["-1"]
   egress_cidrs       = [["0.0.0.0/0"]]
 
-  /*
-  If you would like to access with your local machine, uncomment the following.
-  Remember to comment again before uploading to github.
-
-
+  # User's IP address. Set in terraform.tfvars
   ingress_from_ports = [0]
   ingress_to_ports = [0]
   ingress_protocols = ["-1"]
-  ingress_cidrs = [["x.x.x.x/32"]]
-
-  */
-
+  ingress_cidrs = [["${var.user_ip}/32"]]
 
   tag_name = "Cluster_SG"
 }

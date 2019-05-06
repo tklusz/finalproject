@@ -1,0 +1,245 @@
+
+body, html {
+  height: 100%;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffcc80; /* Old browsers */
+  background: linear-gradient(180deg, #039BE5 0%,#0277BD 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+hr {
+  color: #03A9F4;
+  border-color: #03A9F4;
+  margin: 2em auto 2.4em auto;
+}
+
+h1 {
+  margin: 0 auto;
+  font-size: 2em;
+  padding: 0;
+  font-weight: normal;
+}
+
+h2 {
+  margin: 0 auto;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+h3{
+  padding: 1.25em 0 .35em 0;
+  font-size: 1.35sem;
+  font-weight: normal;
+  margin: 0 auto;
+}
+
+h5 {
+  margin: 0 auto .3em auto ;
+  text-align: center;
+  font-weight: normal;
+  font-size: .8em;
+}
+
+p {
+  margin: 0 auto .8em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.big-paragraph{
+  text-align: left;
+  padding: 0 1em 0 1em;
+
+}
+
+.sub-paragraph{
+  font-size: 1em;
+  line-height: 1.3em;
+  margin: 0 auto;
+  padding: .6em 0 1em 0;
+}
+
+.main-section {
+  background: white;
+  padding: 1.6em;
+  margin: 1.1em;
+  text-align: center;
+  border-radius: .3em;
+  z-index: -1;
+  box-shadow: 0 0 10px black;
+}
+
+.education-list{
+  padding: .7em 0 0 0;
+}
+
+.devops-subtitle{
+  padding-bottom: .8em;
+}
+
+.skills-hr {
+  margin-top: 1em;
+}
+
+.cta {
+  display:block;
+
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+
+  color: white;
+  background: black;
+  padding: .6em;
+
+  border-radius: 1em;
+  margin: 1em auto 1em auto;
+  opacity: .9;
+  width: 200px;
+}
+
+.midline-cta{
+  margin-top: 1.6em;
+}
+
+.cta:hover, .individual-icon:hover{
+  opacity: 1; transition-delay: 80ms, 80ms;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-areas:
+  "description"
+  "link-icon";
+  grid-template-rows: 2;
+  grid-gap: .8em;
+  margin: 1em auto;
+  align-items: center;
+}
+
+.exp-grid-description {
+  grid-area: description;
+  line-height: 1.45em;
+}
+
+.exp-grid-icon {
+  grid-area: link-icon;
+}
+
+.exp-hr {
+  width: 80%;
+  color:#29B6F6;
+  margin: 1.25em auto 0 auto;
+}
+
+
+.closed-source{
+  position: relative;
+}
+
+.closed-tooltip{
+  visibility: hidden;
+
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+
+  background: black;
+  color: white;
+  width: 8em;
+  opacity: .9;
+
+  border-radius: .3em;
+  left: -140%;
+  top: -100%;
+  padding: .3em .3em;
+}
+
+.closed-source:hover .closed-tooltip{
+  visibility: visible;
+}
+
+.individual-icon{
+  color: black;
+  opacity: .85;
+}
+
+.closed-source-icon {
+  opacity: .35;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.both-gits{
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.skill-grid{
+  display: grid;
+  align-items: end;
+  grid-template-columns: 100%;
+  padding: 0 1em 0 1em;
+}
+
+.grid-title{
+  font-size: 1.1em;
+}
+
+.grid-paragraph{
+  padding: 0em;
+  line-height: 1.4em;
+}
+
+.section-description{
+  line-height: 1.45em;
+  text-align: center;
+}
+
+
+#icon-set > * {
+  visibility: visible;
+  margin: .6em 1em 0 .6em;
+  transition: opacity 80ms linear 90ms, transform 150ms ease-in-out 100ms;
+  color: black;
+  opacity: .85;
+}
+
+#icon-set:hover > * {
+  opacity: 0.4;
+}
+
+#icon-set > *:hover {
+  opacity: 1; transition-delay: 0ms, 0ms;
+}
+
+#lastname {
+  margin-bottom: .5em;
+}
+
+#contact{
+  margin: 1.25em auto 2em auto;
+}
+
+#icon-set {
+  text-align: center;
+  padding: 1em 0 1em 0;
+  visibility: hidden;
+}
+
+#me{
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+  margin: 1em auto 1.3em auto;
+}

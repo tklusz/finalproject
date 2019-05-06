@@ -4,6 +4,13 @@ resource "aws_vpc" "vpc_module_vpc" {
   instance_tenancy = "${var.instance_tenancy}"
   enable_dns_support = "true"
   enable_dns_hostnames = "true"
+
+  tags = "${
+    map(
+     "Name", "vpc_module_vpc",
+     "kubernetes.io/cluster/${var.cluster_name}", "owned",
+    )
+  }"
 }
 
 # Creating an internet gateway.
@@ -35,9 +42,12 @@ resource "aws_subnet" "vpc_module_private_subnet" {
 
   # Also tagging our subnets using the current index.
   # If we have 2 subnets they  will be tagged "Private_0" & "Private_1"
-  tags {
-    Name = "Private_${count.index}"
-  }
+  tags = "${
+    map(
+     "Name", "Private_${count.index}",
+     "kubernetes.io/cluster/${var.cluster_name}", "owned",
+    )
+  }"
 }
 
 # Generates our public subnets, nearly identical code to private subnets.
@@ -47,9 +57,12 @@ resource "aws_subnet" "vpc_module_public_subnet" {
   cidr_block = "${var.public_subnet_cidrs[count.index]}"
   availability_zone = "${var.public_subnet_azs[count.index]}"
 
-  tags {
-    Name = "Public_${count.index}"
-  }
+  tags = "${
+    map(
+     "Name", "Public_${count.index}",
+     "kubernetes.io/cluster/${var.cluster_name}", "owned",
+    )
+  }"
 }
 
 # Creating our private route table.

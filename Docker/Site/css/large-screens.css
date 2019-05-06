@@ -1,0 +1,170 @@
+@media only screen and (min-width: 768px) {
+  body{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5em;
+    min-height: 450px;
+  }
+
+  h1 {
+    margin: 0 auto;
+    font-size: 3em;
+  }
+
+  h2{
+    font-size: 2.25em;
+  }
+
+  h3{
+    font-size: 1.5em;
+    padding: 2em 0 .35em 0;
+  }
+
+  h5{
+    font-size: 1em;
+  }
+
+  hr{
+    margin: 3em auto 3em auto;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  p{
+    line-height: 1.4;
+  }
+
+  .big-paragraph{
+    text-align: left;
+    padding: 0 6em 0 6em;
+  }
+
+  .whole-contents{
+    box-shadow: 0 0 15px black;
+    border-radius: .3em;
+    margin: 1.1em;
+  }
+
+  .desktop-only{
+    display: block;
+  }
+
+  .midline-cta{
+    display: none;
+  }
+
+  .closed-tooltip{
+    left: -145%;
+    top: -120%;
+  }
+
+  .double-button{
+    display:inline-block;
+    margin-top: 3em;
+    margin-left: .5em;
+    font-weight: normal;
+  }
+
+  .contact-text{
+    margin-bottom: 1.5em;
+  }
+
+  .skills-hr{
+    margin: 3em auto 0 auto;
+  }
+
+  .navitem:hover{
+    text-decoration: underline;
+    text-decoration-color: #E1F5FE;
+    transition-duration: 0.3s;
+  }
+
+  .main-section {
+    padding: 0 5em 1.7em 5em;
+    margin: 0 0 3.5em 0;
+    background: white;
+    border-radius: 0 0 .3em .3em;
+    box-sizing: border-box;
+    box-shadow: none;
+  }
+
+  .navitem{
+    padding:.1em .5em .1em .5em;
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+
+  .sub-paragraph {
+    font-size: 1.2em;
+  }
+
+  .section-line-1{
+    display: inline-block;
+    padding-right: .7em;
+  }
+
+  .skill-list{
+    padding: .6em 5em 1em 5em;
+  }
+
+  .devops-subtitle{
+    padding-top: 1.3em;
+  }
+  .exp-grid-icon{
+    padding-bottom: .5em;
+  }
+
+  .skill-grid{
+    display: grid;
+    grid-template-columns: 50% auto;
+    align-items: center;
+  }
+
+  .grid-paragraph{
+    padding: 0em 1.5em 0em 1.5em;
+  }
+
+  .section-description{
+    line-height: 1.4em;
+  }
+
+  #me{
+    height: 12em;
+    width: 12em;
+    margin: 5em auto 3.3em auto ;
+  }
+
+  #icon-set{
+      margin-bottom: 6em;
+  }
+
+  #name{
+    margin: 1em auto 2em auto;
+  }
+
+  #lastname {
+    display: inline;
+    margin-left: .2em;
+  }
+
+  #name h1{
+    display:inline;
+  }
+
+  #navbar{
+    background: white;
+    text-align: right;
+    padding: 1.6em 4em 1.6em 4em;
+    margin: 0;
+    background: #E1F5FE;
+    border-radius: .3em .3em 0 0;
+  }
+
+  #contact{
+    margin: 3em auto 3em auto;
+  }
+
+}
