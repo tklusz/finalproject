@@ -1,5 +1,5 @@
-- hosts: master
-- name: run the playbook tasks on the localhost
+- hosts: masters
+#- name: run the playbook tasks on the localhost
 #  hosts: 127.0.0.1
 #  connection: local
  # become: yes

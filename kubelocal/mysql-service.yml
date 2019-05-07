@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service              # 1
+metadata:
+  name: cs-mysql
+spec:
+  type: LoadBalancer       # 2
+  ports:
+  - port: 3306               # 3
+    protocol: TCP          # 4
+    targetPort: 3306         # 5
+  selector:                # 6
+    app: cs-mysql      # 7

@@ -27,15 +27,15 @@ Vagrant.configure("2") do |config|
       subconfig.vm.network "public_network"
     end
   end
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "serverconfig.yml"
-  end
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "kube.yml"
-  end
-  config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "master.yml"
-  end
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.playbook = "serverconfig.yml"
+  # end
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.playbook = "kube.yml"
+  # end
+  # config.vm.provision "ansible_local" do |ansible|
+  #   ansible.playbook = "master.yml"
+  # end
 end
 
 
