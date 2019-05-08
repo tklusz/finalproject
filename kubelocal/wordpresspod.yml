@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod                                            # 1
+metadata:
+  name: cs-frontend
+  labels:
+    app: cs-frontend                                  # 2
+spec:                                                # 3
+  containers:
+    - image: wordpress                                # 4
+      name: cs-wordpress                             # 5
+      ports:
+        - containerPort: 80                          # 6

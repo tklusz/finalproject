@@ -1,0 +1,1 @@
+pscp devmachine01:/home/ubuntu/repo/lab/k8s/sa-frontend/build/* C:\Repo\finalproject\kubelocal\app\frontend

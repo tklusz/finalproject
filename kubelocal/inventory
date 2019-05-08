@@ -1,0 +1,8 @@
+[workers]
+192.168.0.24 ansible_ssh_user=ubuntu
+192.168.0.25 ansible_ssh_user=ubuntu
+[masters]
+master ansible_host=192.168.0.23 ansible_ssh_user=ubuntu
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
