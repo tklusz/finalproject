@@ -34,3 +34,8 @@
       args:
         chdir: $HOME
         creates: pod_network_setup.txt
+
+
+#iptables -t nat -S
+
+#kubectl apply -f https://github.com/coreos/flannel/blob/master/Documentation/kube-flannel.yml >> pod_network_setup.txt
