@@ -1,8 +1,9 @@
 # Variables required for our AWS VPC module.
 
 # For VPC itself.
-variable "cidr_block"{}
-variable "instance_tenancy"{}
+variable "cidr_block" {}
+variable "instance_tenancy" {}
+variable "cluster_name" {}
 
 # For subnets.
 variable "private_subnet_cidrs" {
