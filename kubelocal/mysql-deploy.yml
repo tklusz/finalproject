@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: cs-mysql
+        app: childsafewp
     spec:
       containers:
         - image: mysql

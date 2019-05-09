@@ -9,4 +9,4 @@ spec:
     protocol: TCP          # 4
     targetPort: 3306         # 5
   selector:                # 6
-    app: cs-mysql      # 7
+    app: childsafewp     # 7

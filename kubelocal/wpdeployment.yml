@@ -13,7 +13,7 @@ spec:
   template:                                               # 6
     metadata:
       labels:
-        app: cs-frontend                                  # 7
+        app: childsafewp                                 # 7
     spec:
       containers:
         - image: wordpress
